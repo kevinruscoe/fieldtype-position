@@ -1,0 +1,20 @@
+{
+    "name": "kevinruscoe/fieldtype-position",
+    "description": "Position Field",
+    "autoload": {
+        "psr-4": {
+            "KevinRuscoe\\FieldtypePosition\\": "src/"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Position Field",
+            "description": "A simple position field"
+        },
+        "laravel": {
+            "providers": [
+                "KevinRuscoe\\FieldtypePosition\\ServiceProvider"
+            ]
+        }
+    }
+}
