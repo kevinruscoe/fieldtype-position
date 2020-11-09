@@ -1,0 +1,6 @@
+<template>
+    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>Arrow pointing south-west</title>
+        <path d="M18.243 7.172l-1.415-1.415-9.07 9.071v-4.585h-2v8h8v-2H9.17l9.072-9.071z" fill="currentColor"/>
+    </svg>
+</template>
