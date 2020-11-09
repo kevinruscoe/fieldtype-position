@@ -2,28 +2,26 @@
 
     <div class="position-fieldtype-selector">
         <a
-            v-on:click.prevent="toggleSelectorModal()"
-            v-bind:class="selectorModalButtonClass"
-            href="#open-position-fieldtype-modal"
-            class="position-fieldtype-selector__button btn">
+            v-on:click.prevent="toggleModalVisibility()"
+            v-bind:class="modalToggleButtonClass"
+            href="#open-modal">
             Set Position
         </a>
 
         <div
-            v-show="selectorModalOpen"
+            v-show="modalIsOpen"
             class="position-fieldtype-selector__modal">
-            <div class="position-fieldtype-selector__modal__selector">
-                <div class="position-fieldtype-selector__modal__selector__compass">
+            <div class="position-fieldtype-selector__modal__content">
+
+                <div class="position-fieldtype-selector__compass">
                     <a
                         v-for="(position, index) in positions"
                         v-on:click.prevent="updatePosition(position)"
                         v-bind:key="index"
-                        v-bind:class="[
-                            { active: (position == value) }, `position-fieldtype-selector__modal__selector__compass__button--${position}`
-                        ]"
-                        class="position-fieldtype-selector__modal__selector__compass__button btn"
+                        v-bind:class="compassButtonClass(position)"
                         href="#select-position">{{ position }}</a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -33,23 +31,40 @@
     export default {
         mixins: [Fieldtype],
         methods: {
-            toggleSelectorModal(){
-                this.selectorModalOpen = ! this.selectorModalOpen;
+            toggleModalVisibility(){
+                this.modalIsOpen = ! this.modalIsOpen;
+            },
+            compassButtonClass(position) {
+                let cssClasses = [
+                    'btn',
+                    'position-fieldtype-selector__compass__button',
+                    `position-fieldtype-selector__compass__button--${position}`
+                ];
+
+                if (position == this.value) {
+                    cssClasses.push('active');
+                }
+
+                return cssClasses;
             },
             updatePosition(position) {
                 this.update(position);
 
-                this.selectorModalOpen = false;
+                this.modalIsOpen = false;
             }
         },
         computed: {
-            selectorModalButtonClass() {
-                return `position-fieldtype-selector__button--${this.value}`;
+            modalToggleButtonClass() {
+                return [
+                    'btn',
+                    'position-fieldtype-selector__toggle-button',
+                    `position-fieldtype-selector__button--${this.value}`
+                ];
             }
         },
         data() {
             return {
-                selectorModalOpen: false,
+                modalIsOpen: false,
                 positions: [
                     'top-left',
                     'top',
