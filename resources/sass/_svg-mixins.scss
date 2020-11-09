@@ -1,0 +1,26 @@
+@function svg-bg($position) {
+
+    // url('data:image/svg+xml,
+
+    $positions: (
+        "top-left": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.475 5.495l.004 2-4.557.01 9.603 9.585-1.412 1.415-9.63-9.61.01 4.614-2 .004-.018-8 8-.018z" fill="currentColor"/></svg>',
+
+        "top": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 8.962l-1.418 1.411-3.255-3.27-.013 13.605-2-.002.013-13.568-3.23 3.215-1.41-1.417 5.67-5.644 5.643 5.67z" fill="currentColor"/></svg>',
+
+        "top-right": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.525 5.495l-.004 2 4.557.01-9.603 9.585 1.413 1.415 9.63-9.61-.012 4.614 2 .004.02-8-8-.018z" fill="currentColor"/></svg>',
+
+        "left": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.328 11v2H7.5l3.243 3.243-1.415 1.414L3.672 12l5.656-5.657 1.415 1.414L7.5 11h12.828z" fill="currentColor"/></svg>',
+
+        "center": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9H3V7h4V3h2v6zM9 15H3v2h4v4h2v-6zM21 15h-6v6h2v-4h4v-2zM15 9h6V7h-4V3h-2v6z" fill="currentColor"/></svg>',
+
+        "right": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.038 6.343l-1.411 1.418 3.27 3.255-13.605.013.002 2 13.568-.013-3.215 3.23 1.417 1.41 5.644-5.67-5.67-5.643z" fill="currentColor"/></svg>',
+
+        "bottom-left": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.243 7.172l-1.415-1.415-9.07 9.071v-4.585h-2v8h8v-2H9.17l9.072-9.071z" fill="currentColor"/></svg>',
+
+        "bottom": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 3.672h2V16.5l3.243-3.243 1.414 1.415L12 20.328l-5.657-5.656 1.414-1.415L11 16.5V3.672z" fill="currentColor"/></svg>',
+
+        "bottom-right": 'data:image/svg+xml,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.757 7.172l1.415-1.415 9.07 9.071v-4.585h2v8h-8v-2h4.586l-9.07-9.071z" fill="currentColor"/></svg>'
+    );
+
+    @return map-get($positions, $position);
+}
