@@ -1,6 +1,6 @@
 {
     "name": "webfoo/statamic-fieldtype-position",
-    "description": "Position Field",
+    "description": "A 'Position Field' for statamic, which allows you to set a position (such as top-left) of things.",
     "autoload": {
         "psr-4": {
             "Webfoo\\FieldtypePosition\\": "src/"
@@ -9,7 +9,7 @@
     "extra": {
         "statamic": {
             "name": "Position Field",
-            "description": "A simple position field"
+            "description": "A 'Position Field' for statamic, which allows you to set a position (such as top-left) of things."
         },
         "laravel": {
             "providers": [
