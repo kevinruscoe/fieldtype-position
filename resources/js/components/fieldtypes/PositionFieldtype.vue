@@ -22,38 +22,15 @@
                     class="position-fieldtype__compass__button btn"
                     type="button">
                     <span class="hidden">{{ position }}</span>
-                    <component v-bind:is=position />
+                    <img src="//s.svgbox.net/materialui.svg?ic=arrow_upward" v-bind:class="`r-${position}`">
                 </button>
             </div>
-
         </div>
     </div>
 
 </template>
 <script>
-
-    import IconTopLeft from "./../icons/IconTopLeft";
-    import IconTop from "./../icons/IconTop";
-    import IconTopRight from "./../icons/IconTopRight";
-    import IconLeft from "./../icons/IconLeft";
-    import IconCenter from "./../icons/IconCenter";
-    import IconRight from "./../icons/IconRight";
-    import IconBottomLeft from "./../icons/IconBottomLeft";
-    import IconBottom from "./../icons/IconBottom";
-    import IconBottomRight from "./../icons/IconBottomRight";
-
     export default {
-        components: {
-            'top-left': IconTopLeft,
-            'top': IconTop,
-            'top-right': IconTopRight,
-            'left': IconLeft,
-            'center': IconCenter,
-            'right': IconRight,
-            'bottom-left': IconBottomLeft,
-            'bottom': IconBottom,
-            'bottom-right': IconBottomRight,
-        },
         mixins: [Fieldtype],
         methods: {
             toggleModalVisibility(){

@@ -86,3 +86,16 @@
         }
     }
 }
+
+$compassToDegree: (
+    "top-left": 315, "top": 0, "top-right": 45, 
+    "right": 90, 
+    "bottom-right": 135, "bottom": 180, "bottom-left": 225, 
+    "left": 270, 
+);
+
+@each $compass, $degree in $compassToDegree {
+    .r-#{$compass} {
+        transform: rotateZ($degree);
+    }
+}
