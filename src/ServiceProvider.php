@@ -2,7 +2,7 @@
 
 namespace Webfoo\PositionFieldtype;
 
-use Webfoo\PositionFieldtype\Fieldtypes\PositionFieldtype;
+use Webfoo\PositionFieldtype\PositionFieldtype;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
