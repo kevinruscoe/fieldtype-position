@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfoo\FieldtypePosition;
+namespace Webfoo\StatamicPositionFieldtype;
 
 use Statamic\Fields\Fieldtype;
 

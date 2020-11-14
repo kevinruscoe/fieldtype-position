@@ -1,8 +1,8 @@
 <?php
 
-namespace Webfoo\PositionFieldtype;
+namespace Webfoo\StatamicPositionFieldtype;
 
-use Webfoo\PositionFieldtype\PositionFieldtype;
+use Webfoo\StatamicPositionFieldtype\PositionFieldtype;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
