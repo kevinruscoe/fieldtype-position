@@ -1,14 +1,14 @@
 <?php
 
-namespace Webfoo\FieldtypePosition;
+namespace Webfoo\PositionFieldtype;
 
-use Webfoo\FieldtypePosition\Fieldtypes\Position;
+use Webfoo\PositionFieldtype\Fieldtypes\PositionFieldtype;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {
     protected $fieldtypes = [
-        Position::class
+        PositionFieldtype::class
     ];
 
     protected $scripts = [
