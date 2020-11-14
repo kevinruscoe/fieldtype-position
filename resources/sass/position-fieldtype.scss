@@ -88,14 +88,31 @@
 }
 
 $compassToDegree: (
-    "top-left": 315, "top": 0, "top-right": 45, 
-    "right": 90, 
-    "bottom-right": 135, "bottom": 180, "bottom-left": 225, 
-    "left": 270, 
+    "top-left": 315, "top": 0, "top-right": 45,
+    "right": 90,
+    "bottom-right": 135, "bottom": 180, "bottom-left": 225,
+    "left": 270,
 );
 
-@each $compass, $degree in $compassToDegree {
-    .r-#{$compass} {
-        transform: rotateZ($degree);
+.img-arrow {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+
+    &--center {
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 490 490'%3E%3Cpath d='M403 167h-63L489 11 478 0 330 156V94h-16v89h89zM92 166v16h89V93h-15v62L11 0 0 11l155 155zM94 315h63L0 479l11 11 157-164v63h15v-89H94zM490 480L338 316h65v-15h-89v88h16v-60l149 161z'/%3E%3C/svg%3E");
+    }
+
+    &[class*='top'], &[class*='right'], &[class*='bottom'], &[class*='left'] {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M263 3c-4-4-10-4-15 0L56 195a11 11 0 0015 15L245 36v465a11 11 0 0022 0V36l173 174a11 11 0 1015-15L263 3z' fill='%231c2e36'/%3E%3Cpath d='M448 213c-3 0-6-1-8-3L256 26 71 210a11 11 0 01-15-15L248 3c5-4 11-4 15 0l192 192a11 11 0 01-7 18z'/%3E%3Cpath d='M256 512c-6 0-11-5-11-11V11a11 11 0 0122 0v490c0 6-5 11-11 11z'/%3E%3C/svg%3E");
+    }
+
+    @each $compass, $degree in $compassToDegree {
+        &--#{$compass} {
+            transform: rotateZ(#{$degree}deg);
+        }
     }
 }
+

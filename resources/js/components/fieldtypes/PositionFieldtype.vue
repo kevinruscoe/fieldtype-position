@@ -6,13 +6,13 @@
             v-bind:class="toggleModalClass"
             type="button">
             <span class="position-fieldtype__toggle-modal__icon">
-                <component v-bind:is=value />
+                <span v-if="value" v-bind:class="`img-arrow--${value}`" class="img-arrow"></span>
+                <span v-else>?</span>
             </span>
             {{ value ? value : 'Set Position' }}
         </button>
 
         <div v-bind:class="modalClass">
-
             <div class="position-fieldtype__compass">
                 <button
                     v-for="(position, index) in positions"
@@ -22,7 +22,7 @@
                     class="position-fieldtype__compass__button btn"
                     type="button">
                     <span class="hidden">{{ position }}</span>
-                    <img src="//s.svgbox.net/materialui.svg?ic=arrow_upward" v-bind:class="`r-${position}`">
+                    <span v-bind:class="`img-arrow--${position}`" class="img-arrow"></span>
                 </button>
             </div>
         </div>
